@@ -2,9 +2,13 @@
 
 :root {
   --color-text-black: #000000;
+  --color-text-white: #ffffff;
+  --color-text-grey: #9197b3;
   --color-mark: #838383;
+  --color-active: #5932ea;
   --color-container-right: #fafbff;
   --text-default: 400;
+  --text-medium: 500;
   --text-bold: 700;
 }
 
@@ -20,8 +24,17 @@ body {
   font-weight: 400;
   font-size: 14px;
 }
+html,
+body {
+  height: 100%;
+}
 main {
-  grid-template-columns: auto auto;
+  grid-template-columns: auto 1fr;
+  height: 100%;
+}
+a {
+  text-decoration: none;
+  color: var(--color-text-black);
 }
 h1 {
   font-size: 26px;
@@ -36,14 +49,8 @@ mark {
   background-color: inherit;
   color: var(--color-mark);
 }
-.h100 {
-  height: 100%;
-}
 .bold {
   font-weight: 700;
-}
-.container {
-  margin: 0 auto;
 }
 .flex {
   display: flex;
@@ -51,27 +58,69 @@ mark {
 .grid {
   display: grid;
 }
+.active {
+  background-color: var(--color-active);
+}
 
-/* ==================== NAV SECTION ==================== */
+/* ==================== MENU SECTION ==================== */
 
 .container__left {
-  width: 100%;
+  width: min-content;
   padding: 28px;
-  gap: 45px;
-  /* grid-template-rows: auto auto auto; */
+  gap: 40px;
+  grid-template-rows: auto 1fr auto;
 }
-header {
+.logo {
   align-items: center;
-  justify-content: center;
   gap: 5px;
 }
-footer {
-  gap: 5px;
+.version {
+  font-size: 10px;
+  position: relative;
+  top: 6px;
+}
+.nav {
+  flex-direction: column;
+  gap: 15px;
+}
+.nav__item {
+  display: block;
+  padding: 10px;
+  border-radius: 8px;
+}
+.nav__item.active figcaption {
+  color: var(--color-text-white);
+}
+.nav__item.active svg path {
+  stroke: var(--color-text-white)
+}
+.nav__content {
+  grid-template-columns: auto 1fr auto;
+  gap: 10px;
+  align-items: center;
+  color: var(--color-text-grey);
+}
+
+.profile {
+  gap: 7px;
+  align-items: center;
+}
+.profile__info {
+  flex-direction: column;
+}
+.profile__info * {
+  display: block;
+}
+.name {
+  font-weight: var(--text-medium);
+}
+.position {
+  font-size: 12px;
 }
 
 /* ==================== MAIN SECTION ==================== */
 
 .container__right {
   background-color: var(--color-container-right);
-  width: 800px;
+  width: 490px;
 }
