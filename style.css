@@ -1,0 +1,77 @@
+/* ==================== ROOT ==================== */
+
+:root {
+  --color-text-black: #000000;
+  --color-mark: #838383;
+  --color-container-right: #fafbff;
+  --text-default: 400;
+  --text-bold: 700;
+}
+
+/* ==================== BASIC ==================== */
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body {
+  font-family: "Poppins", sans-serif;
+  font-weight: 400;
+  font-size: 14px;
+}
+main {
+  grid-template-columns: auto auto;
+}
+h1 {
+  font-size: 26px;
+}
+h2 {
+  font-size: 24px;
+}
+h3 {
+  font-size: 22px;
+}
+mark {
+  background-color: inherit;
+  color: var(--color-mark);
+}
+.h100 {
+  height: 100%;
+}
+.bold {
+  font-weight: 700;
+}
+.container {
+  margin: 0 auto;
+}
+.flex {
+  display: flex;
+}
+.grid {
+  display: grid;
+}
+
+/* ==================== NAV SECTION ==================== */
+
+.container__left {
+  width: 100%;
+  padding: 28px;
+  gap: 45px;
+  /* grid-template-rows: auto auto auto; */
+}
+header {
+  align-items: center;
+  justify-content: center;
+  gap: 5px;
+}
+footer {
+  gap: 5px;
+}
+
+/* ==================== MAIN SECTION ==================== */
+
+.container__right {
+  background-color: var(--color-container-right);
+  width: 800px;
+}
