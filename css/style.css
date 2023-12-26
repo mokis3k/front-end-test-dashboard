@@ -183,6 +183,75 @@ mark {
 .greeting {
   font-weight: var(--text-medium);
 }
+.container__right__header .header__logo {
+  display: none;
+}
+
+/* --- MENU TOGGLER --- */
+
+.menu__toggler {
+  display: none;
+  cursor: pointer;
+  transition: 0.1s linear;
+  justify-content: center;
+  padding: 2px 10px;
+  border: 1px solid var(--color-text-grey-light);
+  border-radius: 5px;
+  background-color: var(--color-container-right);
+  order: 3;
+
+  -webkit-appearance: button;
+}
+.menu__toggler svg g rect {
+  fill: var(--color-text-grey-dark);
+}
+.toggle__menu__bar {
+  display: none;
+  width: 35vw;
+  height: 100vh;
+  z-index: 1;
+  position: fixed;
+  right: 0;
+  bottom: 0;
+  background-color: var(--color-text-grey-dark);
+  transition: 0.1s linear;
+  padding: 6rem 2rem;
+}
+.toggle__menu__bar__header {
+  justify-content: flex-start;
+  gap: 1rem;
+  color: var(--color-white);
+}
+.toggle__menu__bar__header svg path {
+  fill: var(--color-white)
+}
+.toggle__menu__bar nav {
+  margin-top: 10rem;
+}
+
+/* --- MENU TOGGLER HOVER --- */
+
+.menu__toggler:hover {
+  border-color: var(--color-chosen);
+  background-color: var(--color-chosen);
+}
+.menu__toggler:hover svg g rect {
+  fill: var(--color-white);
+}
+
+/* --- MENU TOGGLER ACTIVE --- */
+
+.menu__toggler.active {
+  border-color: var(--color-chosen);
+  background-color: var(--color-white);
+  z-index: 2;
+}
+.menu__toggler.active svg g rect {
+  fill: var(--color-chosen);
+}
+.menu__toggler.active ~ .toggle__menu__bar {
+  display: block;
+}
 
 /* --- CUSTOMERS TABLE WRAPPER --- */
 
@@ -211,7 +280,7 @@ mark {
   border: none;
   border-radius: 10px;
   background: var(--color-container-right);
-  padding: 2rem 8rem;
+  padding: 2rem 9rem;
   font-weight: var(--text-regular);
 }
 .customers__table {
@@ -263,7 +332,7 @@ mark {
   color: var(--color-white);
 }
 
-/* ------ Input placeholder color for different browsers ------ */
+/* --- Input placeholder color for different browsers --- */
 .customers__search__input::placeholder {
   color: var(--color-text-grey-light);
   font-family: "Poppins";
@@ -275,4 +344,66 @@ mark {
 .customers__search__input::-ms-input-placeholder {
   color: var(--color-text-grey-light);
   font-family: "Poppins";
+}
+
+/* ======================= MEDIA ======================= */
+
+@media (max-width: 1200px) {
+  main {
+    grid-template-columns: auto;
+  }
+  .container__left {
+    display: none;
+  }
+
+  .menu__toggler {
+    display: flex;
+  }
+  .container__right__header {
+    grid-template-columns: auto 1fr auto;
+    gap: 5rem;
+  }
+  .container__right__header .header__logo {
+    display: flex;
+    justify-content: end;
+  }
+  .nav__arrow {
+    display: none;
+  }
+}
+
+@media (max-width: 940px) {
+  :root {
+    --font-size-default: 4px;
+  }
+  .version {
+    top: 5px;
+  }
+  .search__icon {
+    left: 5px;
+    top: 5px;
+  }
+}
+@media (max-width: 768px) {
+  :root {
+    --font-size-default: 3px;
+  }
+  .version {
+    top: 3px;
+  }
+  .search__icon {
+    width: 20px;
+    height: 20px;
+    top: 3px;
+    left: 4px;
+  }
+  .toggle__menu__bar {
+    width: 50vw;
+  }
+}
+
+@media (max-width: 580px) {
+  .toggle__menu__bar {
+    width: 100vw;
+  }
 }
