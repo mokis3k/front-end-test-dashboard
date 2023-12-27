@@ -1,4 +1,9 @@
-const menuToggler = document.querySelector("#menuToggler");
-menuToggler.addEventListener("click", () => {
-    menuToggler.classList.toggle("active")
+const menuTogglerButtons = document.querySelectorAll(".menu__toggler");
+
+menuTogglerButtons.forEach((toggler) => {
+  toggler.addEventListener("click", () => {
+    menuTogglerButtons.forEach((toggler) => {
+      toggler.classList.toggle("active");
+    });
+  });
 });
